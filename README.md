@@ -18,13 +18,11 @@ Add CSS files to your `<head>`
 XTimeline HTML structure:
 
        <div class="xtimeline">
-       
-        <div class="xtimeline-item">
-          <div class="xtimeline-content">
-            CONTENT GOES HERE
+          <div class="xtimeline-item">
+             <div class="xtimeline-content">
+               CONTENT GOES HERE
+             </div>
           </div>
-        </div>
-        
        </div>
 
 
