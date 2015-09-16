@@ -1,0 +1,21 @@
+// Basic Theme
+$timeline_bar: #eee
+$timeline_item_bg: #f1f1f1
+$timeline_bubble_bg: #222
+$timeline_bubble_color: #aaa
+$timeline_item_border_color: #ddd
+
+.xtimeline
+  &:before
+    background-color: $timeline_bar
+
+  .xtimeline-item
+    .xtimeline-content
+      background-color: $timeline_item_bg
+
+      &::before
+        background-color: $timeline_bubble_bg
+        color: $timeline_bubble_color
+
+      &::after
+        border-color: $timeline_item_border_color

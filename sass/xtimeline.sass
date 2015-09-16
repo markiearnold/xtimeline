@@ -1,0 +1,106 @@
+$pad: 10px
+$bubble_width: 32px
+$item_min_height: 100px
+$timeline-width: 4px
+$default_z_index: 1
+$collapse_width: 800px
+$bubble_content: 'x'
+
+// Should equal 100%
+$ratio_width: 85%
+$ratio_gutter: 15%
+
+.xtimeline
+  width: 100%
+  position: relative
+  padding: $item_min_height 0 $item_min_height/2
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 50%
+    margin-left: -$timeline-width/2
+    width: $timeline-width
+    height: 100%
+
+  .xtimeline-item
+    position: relative
+    display: block
+    width: 50%
+    margin: -$bubble_width*1.5 auto $bubble_width
+
+    .xtimeline-content
+      width: $ratio_width
+      box-sizing: border-box
+      padding: $pad*2
+      min-height: $item_min_height
+
+      &::before
+        content: $bubble_content
+        position: absolute
+        top: 50%
+        left: -$bubble_width/2
+        margin-top: -$bubble_width/2
+        width: $bubble_width
+        height: $bubble_width
+        line-height: $bubble_width
+        border-radius: $bubble_width/2
+        -moz-border-radius: $bubble_width/2
+        -webkit-border-radius: $bubble_width/2
+        text-align: center
+        z-index: $default_z_index+1
+
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        width: $ratio_gutter
+        height: 1px
+        margin-top: -1px
+        background: transparent
+        border: 0
+        border-bottom-width: 1px
+        border-style: dashed
+
+    &:nth-child(odd)
+      margin-left: 0
+
+      .xtimeline-content
+        &::before
+          left: auto
+          right: -$bubble_width/2
+
+        &::after
+          left: $ratio_width
+
+    &:nth-child(even)
+      margin-left: 50%
+
+      .xtimeline-content
+        margin-left: $ratio_gutter
+
+
+@media (max-width: $collapse_width)
+  .xtimeline
+    &:before
+      left: 0
+
+    .xtimeline-item,
+      width: 100%
+      float: none
+      margin: $bubble_width/2 auto
+
+      &:nth-child(odd),
+      &:nth-child(even)
+        margin-left: 0
+
+        .xtimeline-content
+          margin-left: $ratio_gutter
+          &::before
+            left: -$bubble_width/2
+            right: auto
+
+          &::after
+            left: 0
