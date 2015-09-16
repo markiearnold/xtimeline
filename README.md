@@ -1,2 +1,2 @@
 # XTimeline
-100% CSS Only Timeline
+100% Responsive CSS-Only Timeline
