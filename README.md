@@ -19,7 +19,6 @@ XTimeline HTML structure:
 
        <div class="xtimeline">
        
-        <!-- Items -->
         <div class="xtimeline-item">
           <div class="xtimeline-content">
             CONTENT GOES HERE
